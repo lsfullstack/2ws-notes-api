@@ -24,4 +24,13 @@ export class PrismaUsersRepository implements usersRepositoryInterface {
     return user;
   }
 
+  async findAll(): Promise<User[]> {
+    const users = await prisma.user.findMany({
+      orderBy: {
+        name: 'asc',
+      },
+    });
+
+    return users;
+  }
 }
