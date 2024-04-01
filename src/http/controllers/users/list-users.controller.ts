@@ -1,6 +1,6 @@
-import { FastifyReply, FastifyRequest } from "fastify";
-import { PrismaUsersRepository } from "../../../repositories/prisma/users.repository";
-import { ListUsersService } from "../../../services/users/list-users.service";
+import { FastifyReply, FastifyRequest } from 'fastify';
+import { PrismaUsersRepository } from '../../../repositories/prisma/users.repository';
+import { ListUsersService } from '../../../services/users/list-users.service';
 
 export const listUsersController = async (
   request: FastifyRequest,

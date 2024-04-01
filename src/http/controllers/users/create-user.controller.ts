@@ -1,8 +1,8 @@
-import { FastifyReply, FastifyRequest } from "fastify";
-import { createUserSchema } from "../../validations/users/create-user.schema";
-import { PrismaUsersRepository } from "../../../repositories/prisma/users.repository";
-import { CreateUserService } from "../../../services/users/create-user.service";
-import { EmailAlreadyExistsError } from "../../../errors/email-already-exists.error";
+import { FastifyReply, FastifyRequest } from 'fastify';
+import { createUserSchema } from '../../validations/users/create-user.schema';
+import { PrismaUsersRepository } from '../../../repositories/prisma/users.repository';
+import { CreateUserService } from '../../../services/users/create-user.service';
+import { EmailAlreadyExistsError } from '../../../errors/email-already-exists.error';
 
 export const createUserController = async (
   request: FastifyRequest, 

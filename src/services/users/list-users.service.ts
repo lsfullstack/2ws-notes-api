@@ -1,4 +1,4 @@
-import { usersRepositoryInterface } from "../../interfaces/users/users-repository.interface";
+import { usersRepositoryInterface } from '../../interfaces/users/users-repository.interface';
 
 export class ListUsersService {
   constructor(private usersRepository: usersRepositoryInterface) {}

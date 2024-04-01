@@ -33,4 +33,14 @@ export class PrismaUsersRepository implements usersRepositoryInterface {
 
     return users;
   }
+
+  async findByUuid(uuid: string): Promise<User | null> {
+    const user = await prisma.user.findUnique({
+      where: {
+        uuid
+      },
+    });
+
+    return user;
+  }
 }
