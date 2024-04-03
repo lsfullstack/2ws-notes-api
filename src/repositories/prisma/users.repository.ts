@@ -58,4 +58,20 @@ export class PrismaUsersRepository implements usersRepositoryInterface {
 
     return user;
   }
+
+  async delete(uuid: string) {
+    try {
+      await prisma.user.update({
+        where: {
+          uuid,
+        },
+        data: {
+          is_active: false,
+          deleted_at: new Date(),
+        },
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
 }

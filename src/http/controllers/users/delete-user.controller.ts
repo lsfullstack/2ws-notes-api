@@ -1,9 +1,9 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { PrismaUsersRepository } from '../../../repositories/prisma/users.repository';
-import { RetrieveUserService } from '../../../services/users/retrieve-user.service';
 import { ResourceNotFoundError } from '../../../errors/resource-not-foun.error';
+import { DeleteUserService } from '../../../services/users/delete-user.service';
 
-export const retrieveUserController = async (
+export const DeleteUserController = async (
   request: FastifyRequest, 
   reply: FastifyReply
 ) => {
@@ -11,12 +11,10 @@ export const retrieveUserController = async (
 
   const prismaUserRepository = new PrismaUsersRepository();
 
-  const retrieveUserService = new RetrieveUserService(prismaUserRepository);
+  const deleteUserService = new DeleteUserService(prismaUserRepository);
 
   try {
-    const user = await retrieveUserService.execute(uuid);
-
-    return reply.status(201).send({ user });
+    await deleteUserService.execute(uuid);
 
   } catch (error) {
     if (error instanceof ResourceNotFoundError) {
