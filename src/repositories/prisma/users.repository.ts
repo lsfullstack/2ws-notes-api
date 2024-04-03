@@ -1,6 +1,6 @@
 import { User } from '@prisma/client';
 import { usersRepositoryInterface } from '../../interfaces/users/users-repository.interface';
-import { CreateUserRequest } from '../../interfaces/users/users.interface';
+import { CreateUserRequest, UpdateUserRequest } from '../../interfaces/users/users.interface';
 import { prisma } from '../../lib/prisma';
 
 export class PrismaUsersRepository implements usersRepositoryInterface {
@@ -37,7 +37,22 @@ export class PrismaUsersRepository implements usersRepositoryInterface {
   async findByUuid(uuid: string): Promise<User | null> {
     const user = await prisma.user.findUnique({
       where: {
-        uuid
+        uuid,
+      },
+    });
+
+    return user;
+  }
+
+  async update(uuid: string, data: UpdateUserRequest): Promise<User | null> {
+
+    const user = await prisma.user.update({
+      where: {
+        uuid,
+      },
+      data: {
+        ...data,
+        updated_at: new Date(),
       },
     });
 
