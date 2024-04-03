@@ -8,4 +8,5 @@ export interface usersRepositoryInterface {
   findByUuid(uuid: string): Promise<User | null>,
   update(uuid:string, data: UpdateUserRequest): Promise<User | null>,
   delete(uuid: string): Promise<void>,
+  destroy(uuid: string): Promise<void>,
 }
