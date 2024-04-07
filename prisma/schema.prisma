@@ -24,5 +24,22 @@ model User {
   updated_at DateTime  @default(now())
   deleted_at DateTime?
 
+  Note Note[]
+
   @@map("users")
+}
+
+model Note {
+  uuid        String    @id @default(uuid())
+  description String
+  is_favorite Boolean   @default(false)
+  is_active   Boolean   @default(true)
+  created_ad  DateTime  @default(now())
+  updated_at  DateTime  @default(now())
+  deleted_at  DateTime?
+  user_uuid   String
+
+  user User @relation(fields: [user_uuid], references: [uuid])
+
+  @@map("notes")
 }
