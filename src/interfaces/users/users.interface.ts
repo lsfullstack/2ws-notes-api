@@ -1,3 +1,5 @@
+import { User } from '@prisma/client';
+
 export interface CreateUserRequest {
   name: string;
   email: string;
@@ -8,4 +10,12 @@ export interface CreateUserRequest {
 export interface UpdateUserRequest {
   name?: string;
   email?: string;
+}
+
+export interface ProfileUserRequest {
+  uuid: string;
+}
+
+export interface ProfileUserResponse {
+  user: User;
 }
