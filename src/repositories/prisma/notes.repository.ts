@@ -66,4 +66,20 @@ export class PrismaNotesRepository implements notesRepositoryInterface {
       throw error;
     }
   }
+
+  async restore(uuid: string) {
+    try {
+      await prisma.note.update({
+        where: {
+          uuid,
+        },
+        data: {
+          is_active: true,
+          deleted_at: null,
+        },
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
 }

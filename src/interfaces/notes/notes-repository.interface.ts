@@ -7,4 +7,5 @@ export interface notesRepositoryInterface {
   findByUuid(uuid: string): Promise<Note | null>,
   update(uuid: string, data: UpdateNoteRequest): Promise<Note | null>,
   delete(uuid: string): Promise<void>,
+  restore(uuid: string): Promise<void>,
 }
