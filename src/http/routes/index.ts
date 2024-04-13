@@ -20,4 +20,5 @@ export const routes = async (app: FastifyInstance) => {
   app.post('/notes',       { onRequest: [verifyJwt] }, notesRoutes.createNoteController);
   app .get('/notes',       { onRequest: [verifyJwt] }, notesRoutes.listNotesController);
   app .get('/notes/:uuid', { onRequest: [verifyJwt] }, notesRoutes.retrieveNoteController);
+  app .put('/notes/:uuid', { onRequest: [verifyJwt] }, notesRoutes.updateNoteController);
 }

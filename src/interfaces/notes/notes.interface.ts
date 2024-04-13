@@ -5,3 +5,8 @@ export interface CreateNoteRequest {
   user_uuid?: string;
   user?: User;
 }
+
+export interface UpdateNoteRequest {
+  description?: string;
+  is_favorite?: boolean;
+}

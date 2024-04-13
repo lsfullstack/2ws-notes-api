@@ -12,6 +12,7 @@ import { authLoginController } from '../controllers/auth/auth-login.controller';
 import { createNoteController } from '../controllers/notes/create-note.controller';
 import { listNotesController } from '../controllers/notes/list-notes.controller';
 import { retrieveNoteController } from '../controllers/notes/retrieve-note.controller';
+import { updateNoteController } from '../controllers/notes/update-notes.controller';
 
 export const userRoutes = {
   createUserController,
@@ -31,4 +32,5 @@ export const notesRoutes = {
   createNoteController,
   listNotesController,
   retrieveNoteController,
+  updateNoteController,
 };
