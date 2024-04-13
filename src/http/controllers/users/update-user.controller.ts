@@ -2,10 +2,10 @@ import { FastifyReply, FastifyRequest } from 'fastify';
 import { PrismaUsersRepository } from '../../../repositories/prisma/users.repository';
 import { UpdateUserService } from '../../../services/users/update-user.service';
 import { updateUserSchema } from '../../validations/users/update-user.schema';
-import { ResourceNotFoundError } from '../../../errors/resource-not-foun.error';
+import { ResourceNotFoundError } from '../../../errors/resource-not-found.error';
 
 export const updateUserController = async (
-  request: FastifyRequest, 
+  request: FastifyRequest,
   reply: FastifyReply
 ) => {
   const {

@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import { userRoutes, authRoutes } from './imports';
+import { userRoutes, authRoutes, notesRoutes } from './imports';
 import { verifyJwt } from '../middlewares/verify-jwt';
 
 export const routes = async (app: FastifyInstance) => {
@@ -15,4 +15,7 @@ export const routes = async (app: FastifyInstance) => {
 
   //? ============================== Auth Routes ===============================
   app.post('/auth/login', authRoutes.authLoginController);
+
+  //? ============================= Notess Routes ==============================
+  app.post('/notes', { onRequest: [verifyJwt] }, notesRoutes.createNoteController);
 }

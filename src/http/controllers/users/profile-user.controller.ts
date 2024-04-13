@@ -1,10 +1,10 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { PrismaUsersRepository } from '../../../repositories/prisma/users.repository';
-import { ResourceNotFoundError } from '../../../errors/resource-not-foun.error';
+import { ResourceNotFoundError } from '../../../errors/resource-not-found.error';
 import { ProfileUserService } from '../../../services/users/profile-user.service';
 
 export const profileUserController = async (
-  request: FastifyRequest, 
+  request: FastifyRequest,
   reply: FastifyReply,
 ) => {
   const prismaUserRepository = new PrismaUsersRepository();

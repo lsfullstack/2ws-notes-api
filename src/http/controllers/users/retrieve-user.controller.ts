@@ -1,10 +1,10 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { PrismaUsersRepository } from '../../../repositories/prisma/users.repository';
 import { RetrieveUserService } from '../../../services/users/retrieve-user.service';
-import { ResourceNotFoundError } from '../../../errors/resource-not-foun.error';
+import { ResourceNotFoundError } from '../../../errors/resource-not-found.error';
 
 export const retrieveUserController = async (
-  request: FastifyRequest, 
+  request: FastifyRequest,
   reply: FastifyReply
 ) => {
   const { uuid } = request.params as { uuid: string };
