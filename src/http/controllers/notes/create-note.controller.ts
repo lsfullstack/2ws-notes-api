@@ -15,7 +15,7 @@ export const createNoteController = async (
   const createNoteService = new CreateNoteService(prismaNotesRepository);
   
   try {
-    const { note } = await createNoteService.execute({
+    const note = await createNoteService.execute({
       description,
       user_uuid,                     
     });
