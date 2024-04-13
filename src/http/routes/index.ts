@@ -18,4 +18,5 @@ export const routes = async (app: FastifyInstance) => {
 
   //? ============================= Notess Routes ==============================
   app.post('/notes', { onRequest: [verifyJwt] }, notesRoutes.createNoteController);
+  app.get('/notes', { onRequest: [verifyJwt] }, notesRoutes.listNotesController);
 }

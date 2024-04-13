@@ -13,4 +13,17 @@ export class PrismaNotesRepository implements notesRepositoryInterface {
 
     return note;
   }
+
+  async findAll(user_uuid: string): Promise<Note[]> {
+    const notes = await prisma.note.findMany({
+      where: {
+        user_uuid,
+      },
+      orderBy: {
+        created_ad: 'asc',
+      },
+    });
+
+    return notes;
+  }
 }
