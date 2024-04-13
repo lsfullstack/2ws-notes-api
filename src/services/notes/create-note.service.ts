@@ -24,8 +24,6 @@ export class CreateNoteService {
       user_uuid,
     });
 
-    return {
-      note,
-    }
+    return note;
   }
 }
