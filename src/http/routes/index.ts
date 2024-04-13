@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import { userRoutes, authRoutes } from './imports';
+import { userRoutes, authRoutes, notesRoutes } from './imports';
 import { verifyJwt } from '../middlewares/verify-jwt';
 
 export const routes = async (app: FastifyInstance) => {
@@ -15,4 +15,13 @@ export const routes = async (app: FastifyInstance) => {
 
   //? ============================== Auth Routes ===============================
   app.post('/auth/login', authRoutes.authLoginController);
+
+  //? ============================= Notess Routes ==============================
+  app .post('/notes',               { onRequest: [verifyJwt] }, notesRoutes.createNoteController);
+  app  .get('/notes',               { onRequest: [verifyJwt] }, notesRoutes.listNotesController);
+  app  .get('/notes/:uuid',         { onRequest: [verifyJwt] }, notesRoutes.retrieveNoteController);
+  app  .put('/notes/:uuid',         { onRequest: [verifyJwt] }, notesRoutes.updateNoteController);
+  app.patch('/notes/:uuid',         { onRequest: [verifyJwt] }, notesRoutes.deleteNoteController);
+  app.patch('/notes/:uuid/restore', { onRequest: [verifyJwt] }, notesRoutes.restoreNoteController);
+  app.delete('/notes/:uuid',        { onRequest: [verifyJwt] }, notesRoutes.destroyNoteController);
 }

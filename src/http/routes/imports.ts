@@ -10,6 +10,15 @@ import { profileUserController } from '../controllers/users/profile-user.control
 // Auth
 import { authLoginController } from '../controllers/auth/auth-login.controller';
 
+// Notes
+import { createNoteController } from '../controllers/notes/create-note.controller';
+import { listNotesController } from '../controllers/notes/list-notes.controller';
+import { retrieveNoteController } from '../controllers/notes/retrieve-note.controller';
+import { updateNoteController } from '../controllers/notes/update-notes.controller';
+import { deleteNoteController } from '../controllers/notes/delete-note.controller';
+import { restoreNoteController } from '../controllers/notes/restore-note.contrroller';
+import { destroyNoteController } from '../controllers/notes/destroy-note.controller';
+
 export const userRoutes = {
   createUserController,
   listUsersController,
@@ -22,4 +31,14 @@ export const userRoutes = {
 
 export const authRoutes = {
   authLoginController,
+};
+
+export const notesRoutes = {
+  createNoteController,
+  listNotesController,
+  retrieveNoteController,
+  updateNoteController,
+  deleteNoteController,
+  restoreNoteController,
+  destroyNoteController,
 };

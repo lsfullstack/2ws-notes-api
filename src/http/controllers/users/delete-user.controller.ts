@@ -1,10 +1,10 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { PrismaUsersRepository } from '../../../repositories/prisma/users.repository';
-import { ResourceNotFoundError } from '../../../errors/resource-not-foun.error';
+import { ResourceNotFoundError } from '../../../errors/resource-not-found.error';
 import { DeleteUserService } from '../../../services/users/delete-user.service';
 
 export const deleteUserController = async (
-  request: FastifyRequest, 
+  request: FastifyRequest,
   reply: FastifyReply
 ) => {
   const { uuid } = request.params as { uuid: string };
