@@ -50,4 +50,20 @@ export class PrismaNotesRepository implements notesRepositoryInterface {
 
     return note;
   }
+
+  async delete(uuid: string) {
+    try {
+      await prisma.note.update({
+        where: {
+          uuid,
+        },
+        data: {
+          is_active: false,
+          deleted_at: new Date(),
+        },
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
 }
