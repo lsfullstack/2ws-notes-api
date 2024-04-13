@@ -8,4 +8,5 @@ export interface notesRepositoryInterface {
   update(uuid: string, data: UpdateNoteRequest): Promise<Note | null>,
   delete(uuid: string): Promise<void>,
   restore(uuid: string): Promise<void>,
+  destroy(uuid: string): Promise<void>,
 }

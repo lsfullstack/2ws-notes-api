@@ -82,4 +82,12 @@ export class PrismaNotesRepository implements notesRepositoryInterface {
       throw error;
     }
   }
+
+  async destroy(uuid: string): Promise<void> {
+    await prisma.note.delete({
+      where: {
+        uuid,
+      },
+    });
+  }
 }

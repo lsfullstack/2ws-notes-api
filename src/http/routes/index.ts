@@ -23,4 +23,5 @@ export const routes = async (app: FastifyInstance) => {
   app  .put('/notes/:uuid',         { onRequest: [verifyJwt] }, notesRoutes.updateNoteController);
   app.patch('/notes/:uuid',         { onRequest: [verifyJwt] }, notesRoutes.deleteNoteController);
   app.patch('/notes/:uuid/restore', { onRequest: [verifyJwt] }, notesRoutes.restoreNoteController);
+  app.delete('/notes/:uuid',        { onRequest: [verifyJwt] }, notesRoutes.destroyNoteController);
 }

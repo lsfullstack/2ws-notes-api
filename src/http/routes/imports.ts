@@ -17,6 +17,7 @@ import { retrieveNoteController } from '../controllers/notes/retrieve-note.contr
 import { updateNoteController } from '../controllers/notes/update-notes.controller';
 import { deleteNoteController } from '../controllers/notes/delete-note.controller';
 import { restoreNoteController } from '../controllers/notes/restore-note.contrroller';
+import { destroyNoteController } from '../controllers/notes/destroy-note.controller';
 
 export const userRoutes = {
   createUserController,
@@ -39,4 +40,5 @@ export const notesRoutes = {
   updateNoteController,
   deleteNoteController,
   restoreNoteController,
+  destroyNoteController,
 };
