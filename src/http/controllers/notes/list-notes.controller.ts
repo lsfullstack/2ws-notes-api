@@ -1,6 +1,6 @@
-import { FastifyReply, FastifyRequest } from "fastify";
-import { PrismaNotesRepository } from "../../../repositories/prisma/notes.repository";
-import { ListNotesService } from "../../../services/notes/list-notes.service";
+import { FastifyReply, FastifyRequest } from 'fastify';
+import { PrismaNotesRepository } from '../../../repositories/prisma/notes.repository';
+import { ListNotesService } from '../../../services/notes/list-notes.service';
 
 export const listNotesController = async (
   request: FastifyRequest,

@@ -1,4 +1,4 @@
-import { notesRepositoryInterface } from "../../interfaces/notes/notes-repository.interface";
+import { notesRepositoryInterface } from '../../interfaces/notes/notes-repository.interface';
 
 export class ListNotesService {
   constructor(private notesRepository: notesRepositoryInterface) {}

@@ -1,7 +1,7 @@
-import { ResourceNotFoundError } from "../../errors/resource-not-found.error";
-import { notesRepositoryInterface } from "../../interfaces/notes/notes-repository.interface";
-import { CreateNoteRequest } from "../../interfaces/notes/notes.interface";
-import { prisma } from "../../lib/prisma";
+import { ResourceNotFoundError } from '../../errors/resource-not-found.error';
+import { notesRepositoryInterface } from '../../interfaces/notes/notes-repository.interface';
+import { CreateNoteRequest } from '../../interfaces/notes/notes.interface';
+import { prisma } from '../../lib/prisma';
 
 export class CreateNoteService {
   constructor(private notesRepository: notesRepositoryInterface) {}

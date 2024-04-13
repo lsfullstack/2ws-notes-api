@@ -26,4 +26,14 @@ export class PrismaNotesRepository implements notesRepositoryInterface {
 
     return notes;
   }
+
+  async findByUuid(uuid: string): Promise<Note | null> {
+    const note = await prisma.note.findUnique({
+      where: {
+        uuid,
+      }
+    });
+
+    return note;
+  }
 }

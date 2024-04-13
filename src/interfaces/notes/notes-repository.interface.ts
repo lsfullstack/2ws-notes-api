@@ -1,7 +1,8 @@
-import { Note } from "@prisma/client";
-import { CreateNoteRequest } from "./notes.interface";
+import { Note } from '@prisma/client';
+import { CreateNoteRequest } from './notes.interface';
 
 export interface notesRepositoryInterface {
   create(data: CreateNoteRequest): Promise<Note>,
   findAll(user_uuid: string): Promise<Note[]>,
+  findByUuid(uuid: string): Promise<Note | null>,
 }
