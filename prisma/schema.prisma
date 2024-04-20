@@ -34,7 +34,7 @@ model Note {
   description String
   is_favorite Boolean   @default(false)
   is_active   Boolean   @default(true)
-  created_ad  DateTime  @default(now())
+  created_at  DateTime  @default(now())
   updated_at  DateTime  @default(now())
   deleted_at  DateTime?
   user_uuid   String
